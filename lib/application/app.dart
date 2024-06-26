@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon/presentation/ui/utility/app_color.dart';
 
 import '../presentation/ui/screens/auth/sign_up_screen.dart';
 
@@ -7,8 +8,19 @@ class SilentMoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SignUpScreen(),
+    return MaterialApp(
+      home: const SignUpScreen(),
+      theme: ThemeData(
+        primarySwatch: MaterialColor(AppColors.primaryColor.value, AppColors().color),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primaryColor,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 23),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38))
+          )
+        )
+      ),
     );
   }
 }

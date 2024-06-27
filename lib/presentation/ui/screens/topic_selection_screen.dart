@@ -1,9 +1,13 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:silent_moon/presentation/ui/screens/set_reminder_time_screen.dart';
 import 'package:silent_moon/presentation/ui/utility/app_color.dart';
 import 'package:silent_moon/presentation/ui/utility/image_assets.dart';
+
+import '../widgets/topic_container_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisSpacing: 12
                 ),
                  itemBuilder: (context, index){
-                  return const TopicCounter();
+                  return const TopicContainer();
                 },
                   itemCount: 10,
               ),
@@ -57,33 +61,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class TopicCounter extends StatelessWidget {
-  const TopicCounter({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-     height: 200,
-      width: 160,
-      decoration: BoxDecoration(
-        color: AppColors.primaryColor,
-        borderRadius: BorderRadius.circular(10)
-      ),
-      child: Column(
-        children: [
-          SvgPicture.asset(ImageAssets.ContainerImage,),
-          const Padding(
-            padding: EdgeInsets.only(left: 10, top: 20, right: 10,bottom: 10),
-            child: Text('Reduce stress', textAlign: TextAlign.start, style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
-            ),),
-          )
-        ],
-      ),
-    );
-  }
-}

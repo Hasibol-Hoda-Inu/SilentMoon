@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:silent_moon/presentation/ui/screens/splash_screen.dart';
 import 'package:silent_moon/presentation/ui/utility/app_color.dart';
 
@@ -9,7 +10,7 @@ class SilentMoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: const SplashScreen(),
       theme: ThemeData(
         primarySwatch: MaterialColor(AppColors.primaryColor.value, AppColors().color),

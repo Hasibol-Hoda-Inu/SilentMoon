@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:silent_moon/presentation/ui/screens/home_screen.dart';
 import 'package:silent_moon/presentation/ui/utility/app_color.dart';
 import 'package:silent_moon/presentation/ui/utility/image_assets.dart';
 
@@ -23,19 +25,19 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                 Column(
+                 const Column(
                   children: [
                     Text('Hi Enu!, Welcome', style: TextStyle(
-                      color: Colors.yellow.withOpacity(0.8),
+                      color: Color(0xffFFECCC),
                       fontWeight: FontWeight.w700,
                       fontSize: 30,
                     ),),
-                    const Text('to Silent Moon', style: TextStyle(
-                      color: Colors.white,
+                    Text('to Silent Moon', style: TextStyle(
+                      color: Color(0xffFFECCC),
                       fontSize: 30,
                     ),),
-                    const SizedBox(height: 16,),
-                    const Text('Explore the app, Find some peace of mind to prepare for meditation.', textAlign: TextAlign.center,style: TextStyle(
+                    SizedBox(height: 16,),
+                    Text('Explore the app, Find some peace of mind to prepare for meditation.', textAlign: TextAlign.center,style: TextStyle(
                       color: Colors.white,
                       fontSize: 16
                     ),),
@@ -45,11 +47,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Get.to(const HomeScreen());
+                      },
                       style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white
                     ),
-                      child: const Text('GET STARTED', style: TextStyle(color: AppColors.primaryColor),)
+                      child: const Text('GET STARTED', style: TextStyle(
+                          color: AppColors.primaryColor,
+                        fontSize: 18,
+                      ),)
                   ),
                 )
               ],
